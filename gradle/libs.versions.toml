@@ -1,0 +1,196 @@
+[versions]
+
+koin = "3.4.3"
+serializationJson = "1.5.1"
+koinCompose = "3.4.5"
+kotlin = "1.9.10"
+coroutines = "1.7.3"
+activityCompose = "1.8.0"
+composeBom = "2023.10.01"
+ktorBom = "2.3.3"
+voyager = "1.0.0-rc06"
+room = "2.6.0"
+tika = "2.8.0"
+zelory = "3.0.1"
+coil = "2.4.0"
+paging = "3.2.1"
+boguszpawlowski = "1.1.0"
+androidxWork = "2.8.1"
+yandexMaps = "4.2.2-lite"
+
+datastore = "1.0.0"
+androidxCoreKtx = "1.12.0"
+androidxLifecycleKtx = "2.6.2"
+devtools = "1.9.10-1.0.13"
+application = "8.1.0"
+kotlinxDatetime = "0.4.1"
+testJunit = "4.13.2"
+testJunitExt = "1.1.5"
+espressoCore = "3.5.1"
+kotlinCompiler = "1.5.3"
+okhttp = "4.11.0"
+napier = "2.6.1"
+
+itextpdfItext7 = "7.0.2"
+itextpdfHtml2pdf = "3.0.3"
+
+navigationAndroidX = "2.7.4"
+
+gsmService = "4.3.15"
+googleGmsVision = "20.1.3"
+googleGmsAuth = "20.7.0"
+googlePlay = "1.10.3"
+googleFirebase = "23.3.0"
+googleGmsLocation = "21.0.1"
+zxing = "3.5.1"
+
+material = "1.10.0"
+
+androidxCamera = "1.3.0"
+
+minSdk = "26"
+targetSdk = "34"
+versionCode = "1"
+versionName = "1.0"
+composeVideo = "1.2.0"
+appcompat = "1.6.1"
+
+
+[libraries]
+#   Kotlin
+kotlin-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serializationJson" }
+
+#   Androidx core-ktx
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCoreKtx" }
+androidx-core = { group = "androidx.core", name = "core", version.ref = "androidxCoreKtx" }
+
+#   Androidx runtime-ktx
+androidx-lifecycle = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidxLifecycleKtx" }
+androidx-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-core-ktx", version.ref  = "androidxLifecycleKtx" }
+
+#   Datastore
+datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
+datastore-preferences-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "datastore" }
+
+#   Compose
+compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+compose-material = { group = "androidx.compose.material3", name = "material3" }
+compose-animation = { group = "androidx.compose.animation", name = "animation" }
+compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+compose-ui = { group = "androidx.compose.ui", name = "ui" }
+compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+
+#   Coroutines
+kotlin-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlin-android-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
+
+#   Koin
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+koin-test = { group = "io.insert-koin", name = "koin-test", version.ref = "koin" }
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+koin-ktor = { group = "io.insert-koin", name = "koin-ktor", version.ref = "koin" }
+koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koinCompose" }
+
+#   Ktor
+ktor-boom = { group = "io.ktor", name = "ktor-bom", version.ref = "ktorBom" }
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core" }
+ktor-utils = { group = "io.ktor", name = "ktor-utils" }
+ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio" }
+ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging" }
+ktor-client-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation" }
+ktor-serialization-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json" }
+ktor-serialization-gson = { group = "io.ktor", name = "ktor-serialization-gson" }
+ktor-serialization-jackson = { group = "io.ktor", name = "ktor-serialization-jackson" }
+okhttp-okhttp3 = { group = "com.squareup.okhttp3", name = "okhttp" , version.ref = "okhttp" }
+
+#   Voyager
+voyager-navigator = { group = "cafe.adriel.voyager", name = "voyager-navigator", version.ref = "voyager" }
+voyager-transitions = { group = "cafe.adriel.voyager", name = "voyager-transitions", version.ref = "voyager" }
+voyager-androidx = { group = "cafe.adriel.voyager", name = "voyager-androidx", version.ref = "voyager" }
+voyager-koin = { group = "cafe.adriel.voyager", name = "voyager-koin", version.ref = "voyager" }
+
+
+#   Room
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-common = { group = "androidx.room", name = "room-common", version.ref = "room" }
+
+#   Tika
+tika-parsers = { group = "org.apache.tika", name = "tika-parsers", version.ref = "tika" }
+tika-core = { group = "org.apache.tika", name = "tika-core", version.ref = "tika" }
+
+#   Zelory
+zelory-compressor = { group = "id.zelory", name = "compressor", version.ref = "zelory" }
+
+#   Coil
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+coil-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil" }
+
+#   Paging
+paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "paging" }
+
+#   Composecalendar
+boguszpawlowski-composecalendar = { group = "io.github.boguszpawlowski.composecalendar", name = "composecalendar", version.ref = "boguszpawlowski" }
+boguszpawlowski-datetime = { group = "io.github.boguszpawlowski.composecalendar", name = "kotlinx-datetime", version.ref = "boguszpawlowski" }
+
+#   AndroidxWork runtime
+androidxWork-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "androidxWork" }
+
+#   Google play
+google-play-core = { group = "com.google.android.play", name = "core", version.ref = "googlePlay" }
+google-zxing = { group = "com.google.zxing", name = "core", version.ref = "zxing" }
+
+#   Google gms
+google-gms-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "googleGmsLocation" }
+google-gms-vision = { group = "com.google.android.gms", name = "play-services-vision", version.ref = "googleGmsVision" }
+google-gms-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "googleGmsAuth" }
+google-firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging-ktx", version.ref = "googleFirebase" }
+
+#   CameraX
+camera = { group = "androidx.camera", name = "camera-camera2", version.ref = "androidxCamera" }
+camera-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "androidxCamera" }
+camera-view = { group = "androidx.camera", name = "camera-view", version.ref = "androidxCamera" }
+
+#   Map
+yandex-maps = { group = "com.yandex.android", name = "maps.mobile", version.ref = "yandexMaps" }
+
+#  Kotlinx-datetime
+kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinxDatetime" }
+
+#   Napier
+napier = { module = "io.github.aakira:napier", version.ref = "napier" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+#   Itext Pdf
+itextpdf-itext7 = { group = "com.itextpdf", name = "itext7-core", version.ref = "itextpdfItext7" }
+itextpdf-html2pdf = { group = "com.itextpdf",  name = "html2pdf", version.ref = "itextpdfHtml2pdf" }
+
+#   Tests Compose
+test-compose-junit4 = { module = "androidx.compose.ui:ui-test-junit4"   }
+test-compose-manifest = { module = "androidx.compose.ui:ui-test-manifest"  }
+
+#   Tests
+test-junit = { module = "junit:junit", version.ref = "testJunit" }
+test-androidx-junit = { module = "androidx.test.ext:junit", version.ref = "testJunitExt" }
+test-espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
+
+
+
+
+[plugins]
+application = { id = "com.android.application", version.ref = "application" }
+library = { id = "com.android.library", version.ref = "application" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+devtools = { id = "com.google.devtools.ksp", version.ref = "devtools" }
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlinKapt = { id = "kotlin-kapt" }
+kotlinParcelize = { id = "kotlin-parcelize" }
+kotlinSerializationPlugin = { id = "kotlinx-serialization" }
+
