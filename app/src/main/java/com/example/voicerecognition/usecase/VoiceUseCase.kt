@@ -1,6 +1,5 @@
 package com.example.voicerecognition.usecase
 
-import com.example.voicerecognition.common.models.util.objectToJson
 import com.example.voicerecognition.network.api.ApiAlbums
 import com.example.voicerecognition.network.model.SendingData
 
@@ -16,7 +15,7 @@ class VoiceUseCase(
         flowStart.invoke()
 
         val response = api.postAlbums(body = SendingData(message = text))
-        flowSuccess.invoke(response?.objectToJson())
+        flowSuccess.invoke(response?.message)
         flowStop.invoke()
     }
 

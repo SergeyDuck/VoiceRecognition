@@ -52,7 +52,7 @@ fun HomeScr(model: HomeMainModel) {
     Column(modifier = Modifier.fillMaxSize()) {
         BoxFillWeight()
         Text(
-            text = "Локальное распознование голоса:",
+            text = "Текст:",
             style = ThemeApp.typography.titleLarge,
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center
@@ -78,7 +78,7 @@ fun HomeScr(model: HomeMainModel) {
         BoxSpacer()
         BoxSpacer()
         Text(
-            text = "Ответ с сервера:",
+            text = "Ответ:",
             style = ThemeApp.typography.titleLarge,
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center
