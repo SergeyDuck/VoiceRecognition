@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.example.voicerecognition.main.App"
+        android:name="ru.axas.spechrecognizer.main.App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,13 +13,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.VoiceRecognition"
+        android:theme="@style/Theme.SpechRecognizer"
         tools:targetApi="31">
         <activity
-            android:name="com.example.voicerecognition.main.MainActivity"
+            android:name="ru.axas.spechrecognizer.main.MainActivity"
             android:exported="true"
 
-            android:theme="@style/Theme.VoiceRecognition">
+            android:theme="@style/Theme.SpechRecognizer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

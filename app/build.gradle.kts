@@ -23,7 +23,7 @@ android {
     val keyAliasName = "keyAlias"
     val keyPasswordName = "keyPassword"
 
-    namespace = "com.example.voicerecognition.common"
+    namespace = "ru.axas.spechrecognizer.common"
     compileSdk = libs.versions.targetSdk.get().toInt()
 
     if (props.containsKey(storeFileDirName)) {

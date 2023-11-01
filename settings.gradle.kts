@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "VoiceRecognition"
+rootProject.name = "SpechRecognizer"
 include(":app")
  
