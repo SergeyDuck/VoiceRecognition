@@ -21,9 +21,7 @@ class SplashScreenModel(
     }
 
     fun startApp() = coroutineScope.launch {
-        gDLoaderStart()
         delay(delayMillis)
-        gDLoaderStop()
         goToMain()
     }
 
