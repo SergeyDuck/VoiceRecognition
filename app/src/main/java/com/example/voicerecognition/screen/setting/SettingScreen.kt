@@ -1,11 +1,12 @@
-package com.example.voicerecognition.screen.home
+package com.example.voicerecognition.screen.setting
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -19,15 +20,15 @@ import cafe.adriel.voyager.core.screen.ScreenKey
 import com.example.voicerecognition.base.common_composable.BoxFillWeight
 import com.example.voicerecognition.base.common_composable.BoxSpacer
 import com.example.voicerecognition.base.common_composable.IconButtonApp
+import com.example.voicerecognition.base.common_composable.TextFieldApp
 import com.example.voicerecognition.base.res.DimApp
 import com.example.voicerecognition.base.theme.ThemeApp
-import com.example.voicerecognition.base.util.PermissionsModule
 import com.example.voicerecognition.common.R
 import com.example.voicerecognition.common.base.util.getQualifiedName
 import com.example.voicerecognition.common.base.util.rememberModel
 import com.example.voicerecognition.common.base.util.rememberState
 
-class HomeMainScreen : Screen {
+class SettingScreen : Screen {
 
     override val key: ScreenKey = keyName
 
@@ -37,73 +38,68 @@ class HomeMainScreen : Screen {
 
     @Composable
     override fun Content() {
-        val model = rememberModel<HomeMainModel>()
-        HomeScr(model)
+        val model = rememberModel<SettingModel>()
+        SettingScr(model)
     }
 }
 
 @Composable
-fun HomeScr(model: HomeMainModel) {
-    val textNetwork by model.responseVoice.collectAsState()
-    var textLocal by rememberState { "" }
-    val recognizeIntent = PermissionsModule.recognizeIntent { str ->
-        textLocal = str
-        model.postText(str)
-    }
-    Column(modifier = Modifier.fillMaxSize()) {
-        BoxSpacer()
-        BoxSpacer()
-        BoxSpacer()
-        Box(modifier = Modifier
-            .align(Alignment.End)
-            .padding(DimApp.screenPadding)
-        ) {
-            IconButtonApp(
-                onClick = model::goToSetting,
-                rawImage = R.raw.ic_setting
-            )
-        }
+fun SettingScr(
+    model: SettingModel,
+) {
+//    val textNetwork by model.responseVoice.collectAsState()
+    val domain by model.domain.collectAsState()
+    val url by model.url.collectAsState()
+
+    var textFildDomain by rememberState(domain) { TextFieldValue(domain) }
+    var textFildUrl by rememberState (url){ TextFieldValue(url) }
+
+    Column(modifier = Modifier.fillMaxSize().imePadding()) {
         BoxFillWeight()
         Text(
-            text = "Текст:",
+            text = "Порт:",
             style = ThemeApp.typography.titleLarge,
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center
         )
         BoxSpacer()
-        Text(
+        TextFieldApp(
+            value = textFildDomain,
+            onValueChange = { textFildDomain = it },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = DimApp.screenPadding),
-            textAlign = TextAlign.Center,
-            color = ThemeApp.colors.goodContent,
-            text = textLocal
         )
         BoxSpacer()
         BoxSpacer()
         BoxSpacer()
+        Text(
+            text = "Адрес:",
+            style = ThemeApp.typography.titleLarge,
+            modifier = Modifier.fillMaxWidth(),
+            textAlign = TextAlign.Center
+        )
+        BoxSpacer()
+        TextFieldApp(
+            value = textFildUrl,
+            onValueChange = { textFildUrl = it },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = DimApp.screenPadding),
+        )
+        BoxSpacer()
+        BoxSpacer()
+        BoxSpacer()
+
+
         IconButtonApp(
             modifier = Modifier.align(Alignment.CenterHorizontally),
-            onClick = recognizeIntent::invoke,
-            rawImage = R.raw.ic_mic
-        )
-        BoxSpacer()
-        BoxSpacer()
-        BoxSpacer()
-        Text(
-            text = "Ответ:",
-            style = ThemeApp.typography.titleLarge,
-            modifier = Modifier.fillMaxWidth(),
-            textAlign = TextAlign.Center
-        )
-        BoxSpacer()
-        Text(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = DimApp.screenPadding),
-            text = textNetwork,
-            textAlign = TextAlign.Center,
-            color = ThemeApp.colors.attentionContent,
+            onClick = {
+                model.changeDomain(textFildDomain.text)
+                model.changeUrl(textFildUrl.text)
+                model.goBackStack()
+            },
+            rawImage = R.raw.ic_save
         )
         BoxFillWeight()
     }

@@ -5,9 +5,13 @@ import cafe.adriel.voyager.core.model.coroutineScope
 import com.example.voicerecognition.base.BaseModel
 import com.example.voicerecognition.common.memory.gDLoaderStart
 import com.example.voicerecognition.common.memory.gDLoaderStop
+import com.example.voicerecognition.common.models.logger.LogCustom
+import com.example.voicerecognition.screen.setting.SettingScreen
+import com.example.voicerecognition.screen.splash.SplashScreenModel
 import com.example.voicerecognition.usecase.VoiceUseCase
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -33,5 +37,8 @@ class HomeMainModel(
             flowStop = { gDLoaderStop() },
         )
 
+    }
+     fun goToSetting()  {
+        navigator.push(SettingScreen())
     }
 }

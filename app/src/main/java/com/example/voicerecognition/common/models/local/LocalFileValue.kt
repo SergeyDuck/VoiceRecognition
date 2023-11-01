@@ -4,9 +4,8 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class LocalFileValue(
-    val chooserFamilyId: Int? = null,
-    val token:String? = null,
-    val tokenFirebase:String? = null,
+    val domen:String? = null,
+    val url:String? = null,
 )
 
 

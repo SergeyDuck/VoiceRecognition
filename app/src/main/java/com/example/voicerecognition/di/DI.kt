@@ -18,6 +18,7 @@ package com.example.voicerecognition.di
 
 import android.content.Context
 import com.example.voicerecognition.di.module.setModels
+import com.example.voicerecognition.store.di.providersModuleDataStore
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
@@ -34,6 +35,9 @@ fun initKoin(
     startKoin {
         if (enableNetworkLogs) printLogger(Level.INFO)
         androidContext(context)
+        modules(listOf(
+            providersModuleDataStore(ProvideFileImpl(context))
+        ))
         appDeclaration()
     }
 

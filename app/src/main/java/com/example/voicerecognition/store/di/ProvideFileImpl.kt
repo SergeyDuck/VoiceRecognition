@@ -1,7 +1,6 @@
-package com.example.voicerecognition.di
+package com.example.voicerecognition.store.di
 
 import android.content.Context
-import com.example.voicerecognition.store.di.ProvideFile
 import java.io.File
 
 class ProvideFileImpl(private val context: Context): ProvideFile {
