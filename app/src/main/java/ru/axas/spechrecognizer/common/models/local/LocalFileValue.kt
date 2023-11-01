@@ -4,8 +4,8 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class LocalFileValue(
-    val domen:String? = null,
-    val url:String? = null,
+    val address:String? = null,
+    val port:String? = null,
 )
 
 

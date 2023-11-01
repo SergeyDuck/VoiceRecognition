@@ -147,8 +147,6 @@ dependencies {
         implementation(ktor.serialization.jackson)
         implementation(ktor.utils)
 
-        //    #   Paging
-        implementation(paging.compose)
 
         // Logger
         implementation(napier)

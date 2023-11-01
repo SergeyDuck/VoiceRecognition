@@ -18,7 +18,8 @@ class ApiAlbums(
         body: SendingData,
     ): SendingData? {
         return try {
-            val strUrl = "http://"+dataStore.getLocalData().domen +":"+ dataStore.getLocalData().url+"/recognition/sendMessage"
+            val strUrl =
+                "http://" + dataStore.getLocalData().address + ":" + dataStore.getLocalData().port + "/recognition/sendMessage"
             logD("strUrl: $strUrl")
             val response = client.api.postWithBody(
                 urlString = strUrl,

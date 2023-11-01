@@ -13,10 +13,10 @@ class SettingModel (
     private val dataStore: FileStoreApp,
 ) : BaseModel() {
 
-    private val _domain = MutableStateFlow(dataStore.getLocalData().domen?:"")
+    private val _domain = MutableStateFlow(dataStore.getLocalData().address?:"")
     val domain = _domain.asStateFlow()
 
-    private val _url = MutableStateFlow(dataStore.getLocalData().url?:"")
+    private val _url = MutableStateFlow(dataStore.getLocalData().port?:"")
     val url = _url.asStateFlow()
 
 
@@ -24,12 +24,12 @@ class SettingModel (
         throwable.printStackTrace()
     }
 
-    fun changeDomain(text: String) = coroutineScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
-        dataStore.updateLocalData { it.copy(domen = text) }
+    fun changeAddress(text: String) = coroutineScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
+        dataStore.updateLocalData { it.copy(address = text) }
     }
 
-    fun changeUrl(text: String) = coroutineScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
-        dataStore.updateLocalData { it.copy(url = text) }
+    fun changePort(text: String) = coroutineScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
+        dataStore.updateLocalData { it.copy(port = text) }
     }
 
 }
