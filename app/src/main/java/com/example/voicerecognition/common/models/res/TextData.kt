@@ -18,7 +18,7 @@ object TextApp {
 //    val mockEmail: () -> String = { if (isDebug) "den@example.com" else "" }
 //    val mockPass: () -> String = { if (isDebug) "Qwerty123" else "" }
 
-    const val baseTextNameApp: String = "Voice Recognition"
+    const val baseTextNameApp: String = "Contact App"
     const val FOLDER_NAME: String = "FAMILY_VIBE"
     const val linkAxas: String = "https://axas.ru/"
     const val linkPrivatePolicy: String = "http://support.axas.ru/family_vibe_policy.html"

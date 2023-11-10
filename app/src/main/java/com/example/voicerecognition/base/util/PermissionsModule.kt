@@ -58,6 +58,8 @@ class PermissionsModule(val context: Context) {
     private val permissionAccessFineLocation by lazy { checkPermission(ACCESS_FINE_LOCATION) }
     private val permissionReadExternalStorage by lazy { checkPermission(READ_EXTERNAL_STORAGE) }
     private val permissionWriteExternalStorage by lazy { checkPermission(WRITE_EXTERNAL_STORAGE) }
+    private val permissionReadContacts by lazy { checkPermission(READ_CONTACTS) }
+    private val permissionWriteContacts by lazy { checkPermission(WRITE_CONTACTS) }
     private val permissionReadMediaImages by lazy {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) checkPermission(READ_MEDIA_IMAGES) else GRANTED
     }
@@ -138,8 +140,20 @@ class PermissionsModule(val context: Context) {
         return listPermissionsNeeded.contains(GRANTED)
     }
 
+    fun checkReadWriteContacts(): Boolean {
+        val listPermissionsNeeded: MutableList<Int> = ArrayList()
+
+        listPermissionsNeeded.add(permissionReadContacts)
+        listPermissionsNeeded.add(permissionWriteContacts)
+
+        return listPermissionsNeeded.contains(GRANTED)
+    }
+
     fun listPermissionsNeededLocation(): Array<String> =
         arrayListOf(ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION).toTypedArray()
+
+    fun listPermissionsNeededContacts(): Array<String> =
+        arrayListOf(READ_CONTACTS, WRITE_CONTACTS).toTypedArray()
 
 
     companion object {
@@ -149,6 +163,8 @@ class PermissionsModule(val context: Context) {
         private const val ACCESS_FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION
         private const val READ_EXTERNAL_STORAGE = Manifest.permission.READ_EXTERNAL_STORAGE
         private const val WRITE_EXTERNAL_STORAGE = Manifest.permission.WRITE_EXTERNAL_STORAGE
+        private const val READ_CONTACTS = Manifest.permission.READ_CONTACTS
+        private const val WRITE_CONTACTS = Manifest.permission.WRITE_CONTACTS
 
         @RequiresApi(Build.VERSION_CODES.TIRAMISU)
         private const val READ_MEDIA_IMAGES = Manifest.permission.READ_MEDIA_IMAGES
@@ -240,6 +256,23 @@ class PermissionsModule(val context: Context) {
                     permissionsModule.grantedLocationCoarse() && permissionsModule.grantedLocationFine()
                 if (!isPermission) {
                     permission.launch(permissionsModule.listPermissionsNeededLocation())
+                }
+                else {
+                    returnResult(true)
+                }
+            })
+        }
+
+        @Composable
+        fun PermissionAccessContact(returnResult: (Boolean) -> Unit) {
+            val context = LocalContext.current
+            val permissionsModule = remember { PermissionsModule(context) }
+            val permission = launchPermissionMultiple { isGranted -> returnResult(isGranted) }
+            LaunchedEffect(key1 = Unit, block = {
+                val isPermission =
+                    permissionsModule.checkReadWriteContacts()
+                if (!isPermission) {
+                    permission.launch(permissionsModule.listPermissionsNeededContacts())
                 }
                 else {
                     returnResult(true)
