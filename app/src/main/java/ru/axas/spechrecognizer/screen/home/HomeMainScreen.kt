@@ -34,7 +34,9 @@ class HomeMainScreen : Screen {
     @Composable
     override fun Content() {
         val model = rememberModel<HomeMainModel>()
-
+        LifeScreen(
+            onCreate = model::getLast
+        )
         HomeScr(model)
     }
 }
@@ -51,6 +53,8 @@ fun HomeScr(model: HomeMainModel) {
 
     val postDate by model.timeSend.collectAsState()
     val getDate by model.timeGet.collectAsState()
+    val countSend by model.countSend.collectAsState()
+    val countGet by model.countGet.collectAsState()
 
 
     Column(modifier = Modifier.fillMaxSize()) {
@@ -64,14 +68,26 @@ fun HomeScr(model: HomeMainModel) {
             )
         }
         BoxSpacer()
-        postDate?.let {
-            Text(
-                text = "Последняя отправка: ${it.getFormattedDate()}",
-                style = ThemeApp.typography.caption,
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
-            )
-        }
+
+        Text(
+            text = if (postDate != null)
+                "Последняя отправка: ${postDate?.getFormattedDate()}"
+            else
+                "",
+            style = ThemeApp.typography.caption,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.fillMaxWidth()
+        )
+        Text(
+            text = if (countSend != null)
+                "Количество: $countSend"
+            else
+                "",
+            style = ThemeApp.typography.caption,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.fillMaxWidth()
+        )
+
         BoxSpacer()
         BoxSpacer()
         TextButton(onClick = model::getData, modifier = Modifier.fillMaxWidth()) {
@@ -82,14 +98,23 @@ fun HomeScr(model: HomeMainModel) {
             )
         }
         BoxSpacer()
-        getDate?.let{
-            Text(
-                text = "Контакты получены: ${it.getFormattedDate()}",
-                style = ThemeApp.typography.caption,
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
-            )
-        }
+
+        Text(
+            text = if (getDate != null) "Контакты получены: ${getDate?.getFormattedDate()}" else "",
+            style = ThemeApp.typography.caption,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.fillMaxWidth()
+        )
+        Text(
+            text = if (countGet != null)
+                "Количество: $countGet"
+            else
+                "",
+            style = ThemeApp.typography.caption,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.fillMaxWidth()
+        )
+
         BoxSpacer()
         BoxFillWeight()
     }

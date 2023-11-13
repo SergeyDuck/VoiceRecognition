@@ -8,6 +8,8 @@ data class LocalFileValue(
     val port:String? = null,
     val lastPost:Long? = null,
     val lastGet:Long? = null,
+    val countPost:Int? = null,
+    val countGet:Int? = null,
 )
 
 
