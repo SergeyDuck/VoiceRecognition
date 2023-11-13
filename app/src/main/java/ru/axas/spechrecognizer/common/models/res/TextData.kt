@@ -13,8 +13,8 @@ object TextApp {
     @Volatile
     var versionName: String = ""
 
-    const val baseTextNameApp: String = "Spech Recognizer"
-    const val FOLDER_NAME: String = "FAMILY_VIBE"
+    const val baseTextNameApp: String = "Contacts"
+    const val FOLDER_NAME: String = "CONTACTS"
 
 
 }

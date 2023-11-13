@@ -2,43 +2,98 @@ package ru.axas.spechrecognizer.screen.home
 
 import android.content.Context
 import cafe.adriel.voyager.core.model.coroutineScope
+import ru.axas.spechrecognizer.common.models.util.addContact
+import ru.axas.spechrecognizer.common.models.util.deleteAllContacts
+import ru.axas.spechrecognizer.common.models.util.getContacts
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 import ru.axas.spechrecognizer.base.BaseModel
 import ru.axas.spechrecognizer.common.memory.gDLoaderStart
 import ru.axas.spechrecognizer.common.memory.gDLoaderStop
+import ru.axas.spechrecognizer.common.memory.gDMessage
+import ru.axas.spechrecognizer.common.models.local.LocalFileValue
 import ru.axas.spechrecognizer.common.models.logger.LogCustom
+import ru.axas.spechrecognizer.network.model.Contact
 import ru.axas.spechrecognizer.screen.setting.SettingScreen
-import ru.axas.spechrecognizer.screen.splash.SplashScreenModel
+import ru.axas.spechrecognizer.store.FileStoreApp
 import ru.axas.spechrecognizer.usecase.VoiceUseCase
-import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
 
 class HomeMainModel(
     private val context: Context,
-    private val useCase: VoiceUseCase
+    private val useCase: VoiceUseCase,
+    private val dataStore: FileStoreApp,
 ) : BaseModel() {
 
-    private val _responseVoice = MutableStateFlow("")
-    val responseVoice = _responseVoice.asStateFlow()
+    private val _responseContacts = MutableStateFlow<List<Contact>>(listOf())
+    val responseContacts = _responseContacts.asStateFlow()
+
+    private val _timeSend = MutableStateFlow<Long?>(getLastPost())
+    val timeSend = _timeSend.asStateFlow()
+
+    private val _timeGet = MutableStateFlow<Long?>(getLastGet())
+    val timeGet = _timeGet.asStateFlow()
 
     private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         throwable.printStackTrace()
     }
 
-    fun postText(text: String) = coroutineScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
-        useCase.postText(
-            text = text,
-            flowStart = { gDLoaderStart() },
-            flowSuccess = { _responseVoice.value = it ?: "" },
-            flowStop = { gDLoaderStop() },
-        )
 
-    }
-     fun goToSetting()  {
+    private fun getLastPost() = dataStore.getLocalData().lastPost
+    private fun getLastGet() = dataStore.getLocalData().lastGet
+
+    fun postData() =
+        coroutineScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
+            val contacts = getContacts(context = context)
+            LogCustom.logD("s: $contacts")
+            if (contacts.isEmpty()) gDMessage("Контакты не найдены!")
+            useCase.postData(
+                listContact = contacts,
+                flowStart = { gDLoaderStart() },
+                flowSuccess = {
+                    gDMessage("Контакты отправлены успешно")
+                    val time = System.currentTimeMillis()
+                    _timeSend.value = time
+                    dataStore.updateLocalData { LocalFileValue().copy(lastPost = time) }
+                },
+                flowStop = { gDLoaderStop() },
+                flowError = { LogCustom.logE("Error SEND DATA", contacts) },
+            )
+
+        }
+
+    fun getData() =
+        coroutineScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
+            deleteAllContacts(context = context)
+            useCase.getData(
+                flowStart = { gDLoaderStart() },
+                flowSuccess = {
+                    _responseContacts.value = it
+                    it.forEach { contact ->
+                        addContact(
+                            context = context, list = listOf(
+                                Contact(
+                                    phone = contact.phone,
+                                    firstName = contact.firstName,
+                                    lastName = contact.lastName,
+                                    company = contact.company
+                                )
+                            )
+                        )
+                    }
+                    gDMessage("Контакты сохранены успешно!")
+
+                    val time = System.currentTimeMillis()
+                    _timeGet.value = time
+                    dataStore.updateLocalData { LocalFileValue().copy(lastGet = time) }
+
+                },
+                flowStop = { gDLoaderStop() })
+        }
+
+    fun goToSetting() {
         navigator.push(SettingScreen())
     }
 }

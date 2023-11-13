@@ -3,7 +3,7 @@ package ru.axas.spechrecognizer.base.res
 import androidx.compose.ui.graphics.Color
 import ru.axas.spechrecognizer.base.theme.ColorsSchemeApp
 
-val AquaMarine = Color(0xFFFF5722) // AquaMarine Primary
+val AquaMarine = Color(0xFF1DE9B6) // AquaMarine Primary
 val RaisinBlack = Color(0xFF415174) // Raisin Black Dark Grey textDark
 val BlueBell = Color(0xFF919CB4) // Blue Bell Light Gray textLite
 val Whisper = Color(0xFFF7F8FA) // Whisper Background

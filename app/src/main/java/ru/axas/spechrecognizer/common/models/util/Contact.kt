@@ -1,15 +1,16 @@
-package com.example.voicerecognition.common.models.util
+package ru.axas.spechrecognizer.common.models.util
 
 import android.annotation.SuppressLint
 import android.content.ContentProviderOperation
 import android.content.ContentProviderResult
 import android.content.ContentResolver
+import android.content.ContentUris
 import android.content.Context
 import android.database.Cursor
 import android.provider.Contacts.OrganizationColumns.COMPANY
 import android.provider.ContactsContract
-import com.example.voicerecognition.common.models.logger.LogCustom.logD
-import com.example.voicerecognition.model.Contact
+import ru.axas.spechrecognizer.common.models.logger.LogCustom
+import ru.axas.spechrecognizer.network.model.Contact
 
 
 private const val CONTACT_ID = ContactsContract.Contacts._ID
@@ -20,7 +21,6 @@ private const val LAST_NAME = ContactsContract.Contacts.DISPLAY_NAME_ALTERNATIVE
 private const val HAS_PHONE_NUMBER = ContactsContract.Contacts.HAS_PHONE_NUMBER
 private const val PHONE_NUMBER = ContactsContract.CommonDataKinds.Phone.NUMBER
 private const val PHONE_CONTACT_ID = ContactsContract.CommonDataKinds.Phone.CONTACT_ID
-
 
 
 @SuppressLint("Range")
@@ -38,13 +38,13 @@ fun getContacts(context: Context): List<Contact> {
     if (cursor != null && cursor.count > 0) {
         while (cursor.moveToNext()) {
             val contactId =
-                cursor.getString(cursor.getColumnIndex(CONTACT_ID))?:""
+                cursor.getString(cursor.getColumnIndex(CONTACT_ID)) ?: ""
             val firstname =
-                cursor.getString(cursor.getColumnIndex(DISPLAY_NAME))?:""
+                cursor.getString(cursor.getColumnIndex(DISPLAY_NAME)) ?: ""
             val lastName =
-                cursor.getString(cursor.getColumnIndex(LAST_NAME))?:""
+                cursor.getString(cursor.getColumnIndex(LAST_NAME)) ?: ""
             val company =
-                cursor.getString(cursor.getColumnIndex(COMPANY))?:""
+                cursor.getString(cursor.getColumnIndex(COMPANY)) ?: ""
 
             if (cursor.getInt(cursor.getColumnIndex(HAS_PHONE_NUMBER)) > 0) {
                 val phoneCursor: Cursor? = contentResolver.query(
@@ -59,7 +59,20 @@ fun getContacts(context: Context): List<Contact> {
                     val phoneNumber =
                         phoneCursor.getString(phoneCursor.getColumnIndex(PHONE_NUMBER))
 
-                    contacts.add(Contact(phone = phoneNumber, firstName = firstname, lastName = lastName, company = company))
+                    val listName = firstname.split(" ")
+
+                    val firstN = listName.getOrNull(0) ?: ""
+                    val lastN = listName.getOrNull(1) ?: ""
+                    val familyN = listName.getOrNull(2)
+
+                    contacts.add(
+                        Contact(
+                            phone = phoneNumber,
+                            firstName = firstN,
+                            lastName = familyN ?: lastN,
+                            company = company
+                        )
+                    )
                     phoneCursor.close()
                 }
             }
@@ -73,11 +86,11 @@ fun getContacts(context: Context): List<Contact> {
 
 fun addContact(
     context: Context,
-    list:List<Contact>
-){
+    list: List<Contact>
+) {
     val contentResolver: ContentResolver = context.contentResolver
 
-    list.forEach {contact->
+    list.forEach { contact ->
         // Создаем новую запись контакта
         val ops = ArrayList<ContentProviderOperation>()
 
@@ -96,8 +109,14 @@ fun addContact(
                     ContactsContract.Data.MIMETYPE,
                     ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE
                 )
-                .withValue(ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME, contact.firstName)
-                .withValue(ContactsContract.CommonDataKinds.StructuredName.FAMILY_NAME, contact.lastName)
+                .withValue(
+                    ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME,
+                    contact.firstName
+                )
+                .withValue(
+                    ContactsContract.CommonDataKinds.StructuredName.FAMILY_NAME,
+                    contact.lastName
+                )
                 .build()
         )
 
@@ -129,15 +148,37 @@ fun addContact(
                 .build()
         )
 
-         try {
+        try {
             // Применяем операции
             val results: Array<ContentProviderResult> =
                 contentResolver.applyBatch(ContactsContract.AUTHORITY, ops)
 
             // Проверяем результаты
-             logD("addContact_${contact.firstName} is ${results.isNotEmpty()}")
+            LogCustom.logD("addContact_${contact.firstName} is ${results.isNotEmpty()}")
         } catch (e: Exception) {
             e.printStackTrace()
+        }
+    }
+}
+
+@SuppressLint("Range")
+fun deleteAllContacts(context: Context) {
+    val contentResolver: ContentResolver = context.contentResolver
+
+    val cursor = contentResolver.query(
+        ContactsContract.Contacts.CONTENT_URI,
+        null,
+        null,
+        null,
+        null
+    )
+
+    cursor?.use { contacts ->
+        while (contacts.moveToNext()) {
+            val id = contacts.getString(contacts.getColumnIndex(ContactsContract.Contacts._ID))
+            val deleteUri =
+                ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, id.toLong())
+            contentResolver.delete(deleteUri, null, null)
         }
     }
 }

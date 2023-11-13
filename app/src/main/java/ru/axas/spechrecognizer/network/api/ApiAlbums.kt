@@ -6,29 +6,52 @@ import ru.axas.spechrecognizer.network.model.SendingData
 import ru.axas.spechrecognizer.network.util.postWithBody
 import ru.axas.spechrecognizer.store.FileStoreApp
 import io.ktor.client.call.body
+import io.ktor.client.request.get
+import ru.axas.spechrecognizer.network.model.BaseResponse
+import ru.axas.spechrecognizer.network.model.Contact
 
 class ApiAlbums(
     private val client: Client,
     private val dataStore: FileStoreApp,
 ) {
     /**
-     * postAlbums
+     * POST
+     *
+     * Import Contacts
      */
-    suspend fun postAlbums(
-        body: SendingData,
-    ): SendingData? {
+    suspend fun postData(
+        body: List<Contact>,
+    ): BaseResponse? {
         return try {
             val strUrl =
-                "http://" + dataStore.getLocalData().address + ":" + dataStore.getLocalData().port + "/recognition/sendMessage"
+                "/mobile-prs/contacts/import"
             logD("strUrl: $strUrl")
             val response = client.api.postWithBody(
                 urlString = strUrl,
                 body = body
             )
-            response.body<SendingData>()
+            response.body<BaseResponse>()
         } catch (e: Exception) {
             e.printStackTrace()
             null
+        }
+    }
+
+    /**
+     * GET
+     *
+     * Export Contacts
+     * */
+    suspend fun getData(): List<Contact> {
+        return try {
+            val strUrl =
+                "/mobile-prs/contacts/export"
+            logD("strUrl: $strUrl")
+            val response = client.api.get(strUrl)
+            response.body<List<Contact>>()
+        } catch (e: Exception) {
+            e.printStackTrace()
+            listOf()
         }
     }
 

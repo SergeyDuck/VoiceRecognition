@@ -25,7 +25,7 @@ class Client() :
     Closeable {
 
     companion object {
-        const val BASE_URL: String = ""
+        const val BASE_URL: String = "http://171-25.dev.apidrom.ru:10510"
 
         suspend fun isInternetAccessible(): Boolean {
             return withContext(Dispatchers.IO) {

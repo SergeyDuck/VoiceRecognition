@@ -13,8 +13,8 @@ val setModels = module {
     single { Client() }
     single { SplashScreenModel(get()) }
 
-    factory { HomeMainModel(get(), get()) }
+    factory { HomeMainModel(get(), get(), get()) }
     factory { SettingModel(get()) }
     factory { VoiceUseCase(get()) }
-    factory { ApiAlbums(get(),get()) }
+    factory { ApiAlbums(get(), get()) }
 }
