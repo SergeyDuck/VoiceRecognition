@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.common.models.util
+package ru.axas.contacts.common.models.util
 
 import android.content.Context
 import android.net.ConnectivityManager

@@ -1,6 +1,6 @@
-package ru.axas.spechrecognizer.network
+package ru.axas.contacts.network
 
-import ru.axas.spechrecognizer.common.models.res.TextApp.isDebug
+import ru.axas.contacts.common.models.res.TextApp.isDebug
 import io.ktor.client.HttpClient
 import io.ktor.client.HttpClientConfig
 import io.ktor.client.plugins.HttpResponseValidator
@@ -19,7 +19,7 @@ import io.ktor.serialization.gson.gson
 import io.ktor.utils.io.core.Closeable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import ru.axas.spechrecognizer.network.util.loggerPretty
+import ru.axas.contacts.network.util.loggerPretty
 
 class Client() :
     Closeable {

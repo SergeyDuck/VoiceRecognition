@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.common.memory
+package ru.axas.contacts.common.memory
 
 import androidx.annotation.MainThread
 import androidx.lifecycle.LifecycleOwner

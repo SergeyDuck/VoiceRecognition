@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.base.res
+package ru.axas.contacts.base.res
 
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit

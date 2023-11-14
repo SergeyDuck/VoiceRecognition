@@ -1,14 +1,14 @@
-package ru.axas.spechrecognizer.network.api
+package ru.axas.contacts.network.api
 
-import ru.axas.spechrecognizer.common.models.logger.LogCustom.logD
-import ru.axas.spechrecognizer.network.Client
-import ru.axas.spechrecognizer.network.model.SendingData
-import ru.axas.spechrecognizer.network.util.postWithBody
-import ru.axas.spechrecognizer.store.FileStoreApp
+import ru.axas.contacts.common.models.logger.LogCustom.logD
+import ru.axas.contacts.network.Client
+import ru.axas.contacts.network.model.SendingData
+import ru.axas.contacts.network.util.postWithBody
+import ru.axas.contacts.store.FileStoreApp
 import io.ktor.client.call.body
 import io.ktor.client.request.get
-import ru.axas.spechrecognizer.network.model.BaseResponse
-import ru.axas.spechrecognizer.network.model.Contact
+import ru.axas.contacts.network.model.BaseResponse
+import ru.axas.contacts.network.model.Contact
 
 class ApiAlbums(
     private val client: Client,

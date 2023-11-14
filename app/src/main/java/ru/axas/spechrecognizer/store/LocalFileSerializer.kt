@@ -1,7 +1,7 @@
-package ru.axas.spechrecognizer.store
+package ru.axas.contacts.store
 
 import androidx.datastore.core.Serializer
-import ru.axas.spechrecognizer.common.models.local.LocalFileValue
+import ru.axas.contacts.common.models.local.LocalFileValue
 import ru.data.common.ds.util.CryptoManager
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.json.Json

@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.base.extension
+package ru.axas.contacts.base.extension
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
-import ru.axas.spechrecognizer.base.res.DimApp
+import ru.axas.contacts.base.res.DimApp
 import kotlin.math.ceil
 import kotlin.math.roundToInt
 

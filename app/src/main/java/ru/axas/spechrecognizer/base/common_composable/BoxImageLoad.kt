@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.base.common_composable
+package ru.axas.contacts.base.common_composable
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.RawRes
@@ -34,9 +34,9 @@ import coil.request.CachePolicy
 import coil.request.ImageRequest
 import coil.size.Dimension
 import coil.size.Size
-import ru.axas.spechrecognizer.base.theme.ThemeApp
-import ru.axas.spechrecognizer.common.R
-import ru.axas.spechrecognizer.common.base.util.BlurTransformation
+import ru.axas.contacts.base.theme.ThemeApp
+import ru.axas.contacts.common.R
+import ru.axas.contacts.common.base.util.BlurTransformation
 import kotlinx.coroutines.Dispatchers
 
 

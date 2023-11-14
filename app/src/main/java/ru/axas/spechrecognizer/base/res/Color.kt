@@ -1,7 +1,7 @@
-package ru.axas.spechrecognizer.base.res
+package ru.axas.contacts.base.res
 
 import androidx.compose.ui.graphics.Color
-import ru.axas.spechrecognizer.base.theme.ColorsSchemeApp
+import ru.axas.contacts.base.theme.ColorsSchemeApp
 
 val AquaMarine = Color(0xFF1DE9B6) // AquaMarine Primary
 val RaisinBlack = Color(0xFF415174) // Raisin Black Dark Grey textDark

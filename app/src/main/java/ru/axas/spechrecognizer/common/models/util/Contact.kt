@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.common.models.util
+package ru.axas.contacts.common.models.util
 
 import android.annotation.SuppressLint
 import android.content.ContentProviderOperation
@@ -9,8 +9,8 @@ import android.content.Context
 import android.database.Cursor
 import android.provider.Contacts.OrganizationColumns.COMPANY
 import android.provider.ContactsContract
-import ru.axas.spechrecognizer.common.models.logger.LogCustom
-import ru.axas.spechrecognizer.network.model.Contact
+import ru.axas.contacts.common.models.logger.LogCustom
+import ru.axas.contacts.network.model.Contact
 
 
 private const val CONTACT_ID = ContactsContract.Contacts._ID

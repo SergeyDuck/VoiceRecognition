@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.network.model
+package ru.axas.contacts.network.model
 
 import com.google.gson.annotations.SerializedName
 

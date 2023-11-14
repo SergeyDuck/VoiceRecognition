@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.network.util
+package ru.axas.contacts.network.util
 
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonParser.parseString

@@ -1,9 +1,9 @@
-package ru.axas.spechrecognizer.base.res
+package ru.axas.contacts.base.res
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import ru.axas.spechrecognizer.base.theme.ShapeSchemeApp
+import ru.axas.contacts.base.theme.ShapeSchemeApp
 
 private val smallShapesDp = 8.dp
 private val mediumShapeDp: Dp = 16.dp

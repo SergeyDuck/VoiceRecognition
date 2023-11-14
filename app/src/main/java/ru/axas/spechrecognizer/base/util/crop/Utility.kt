@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.base.util.crop
+package ru.axas.contacts.base.util.crop
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size

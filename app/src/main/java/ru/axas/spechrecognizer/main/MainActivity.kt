@@ -1,10 +1,10 @@
-package ru.axas.spechrecognizer.main
+package ru.axas.contacts.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.core.view.WindowCompat
-import ru.axas.spechrecognizer.base.theme.AxasTheme
+import ru.axas.contacts.base.theme.AxasTheme
 
 class MainActivity : ComponentActivity() {
 

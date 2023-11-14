@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.common.base.util
+package ru.axas.contacts.common.base.util
 
 import android.graphics.Bitmap
 import coil.size.Size

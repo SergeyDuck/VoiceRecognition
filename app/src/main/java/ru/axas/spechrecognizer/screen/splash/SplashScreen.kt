@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.screen.splash
+package ru.axas.contacts.screen.splash
 
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.animateFloatAsState
@@ -15,11 +15,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.core.screen.ScreenKey
-import ru.axas.spechrecognizer.base.common_composable.Logo
-import ru.axas.spechrecognizer.base.theme.ThemeApp
-import ru.axas.spechrecognizer.common.base.util.LifeScreen
-import ru.axas.spechrecognizer.common.base.util.getQualifiedName
-import ru.axas.spechrecognizer.common.base.util.rememberModel
+import ru.axas.contacts.base.common_composable.Logo
+import ru.axas.contacts.base.theme.ThemeApp
+import ru.axas.contacts.common.base.util.LifeScreen
+import ru.axas.contacts.common.base.util.getQualifiedName
+import ru.axas.contacts.common.base.util.rememberModel
 import kotlinx.coroutines.delay
 
 class SplashScreen: Screen {

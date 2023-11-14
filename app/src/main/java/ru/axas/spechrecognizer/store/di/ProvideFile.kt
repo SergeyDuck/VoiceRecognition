@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.store.di
+package ru.axas.contacts.store.di
 
 import java.io.File
 

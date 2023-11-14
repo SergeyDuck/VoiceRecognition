@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.common.base.util
+package ru.axas.contacts.common.base.util
 
 import android.content.Context
 import android.net.Uri
@@ -40,7 +40,7 @@ import coil.size.Size
 import org.koin.core.parameter.ParametersDefinition
 import org.koin.core.qualifier.Qualifier
 import org.koin.mp.KoinPlatform.getKoin
-import ru.axas.spechrecognizer.base.BaseModel
+import ru.axas.contacts.base.BaseModel
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException

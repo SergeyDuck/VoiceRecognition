@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.common.models.logger
+package ru.axas.contacts.common.models.logger
 
 import io.github.aakira.napier.DebugAntilog
 import io.github.aakira.napier.Napier

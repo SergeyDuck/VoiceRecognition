@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.screen.home
+package ru.axas.contacts.screen.home
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,15 +13,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.core.screen.ScreenKey
-import ru.axas.spechrecognizer.base.common_composable.BoxFillWeight
-import ru.axas.spechrecognizer.base.common_composable.BoxSpacer
-import ru.axas.spechrecognizer.base.extension.getFormattedDate
-import ru.axas.spechrecognizer.base.theme.ThemeApp
-import ru.axas.spechrecognizer.base.util.PermissionsModule
-import ru.axas.spechrecognizer.common.base.util.LifeScreen
-import ru.axas.spechrecognizer.common.base.util.getQualifiedName
-import ru.axas.spechrecognizer.common.base.util.rememberModel
-import ru.axas.spechrecognizer.common.base.util.rememberState
+import ru.axas.contacts.base.common_composable.BoxFillWeight
+import ru.axas.contacts.base.common_composable.BoxSpacer
+import ru.axas.contacts.base.extension.getFormattedDate
+import ru.axas.contacts.base.theme.ThemeApp
+import ru.axas.contacts.base.util.PermissionsModule
+import ru.axas.contacts.common.base.util.LifeScreen
+import ru.axas.contacts.common.base.util.getQualifiedName
+import ru.axas.contacts.common.base.util.rememberModel
+import ru.axas.contacts.common.base.util.rememberState
 
 class HomeMainScreen : Screen {
 

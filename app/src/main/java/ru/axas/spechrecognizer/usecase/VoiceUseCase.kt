@@ -1,7 +1,7 @@
-package ru.axas.spechrecognizer.usecase
+package ru.axas.contacts.usecase
 
-import ru.axas.spechrecognizer.network.api.ApiAlbums
-import ru.axas.spechrecognizer.network.model.Contact
+import ru.axas.contacts.network.api.ApiAlbums
+import ru.axas.contacts.network.model.Contact
 
 class VoiceUseCase(
     private val api: ApiAlbums

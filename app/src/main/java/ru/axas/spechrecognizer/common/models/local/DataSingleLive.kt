@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.common.models.local
+package ru.axas.contacts.common.models.local
 
 
 data class DataSingleLive(

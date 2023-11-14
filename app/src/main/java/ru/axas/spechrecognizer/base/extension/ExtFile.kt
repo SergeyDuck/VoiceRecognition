@@ -1,11 +1,11 @@
-package ru.axas.spechrecognizer.base.extension
+package ru.axas.contacts.base.extension
 
 import android.content.Context
 import android.net.Uri
 import android.os.Environment
 import android.webkit.MimeTypeMap
 import androidx.core.content.FileProvider
-import ru.axas.spechrecognizer.common.models.res.TextApp
+import ru.axas.contacts.common.models.res.TextApp
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat

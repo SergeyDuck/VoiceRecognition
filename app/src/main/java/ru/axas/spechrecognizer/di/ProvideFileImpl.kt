@@ -1,7 +1,7 @@
-package ru.axas.spechrecognizer.di
+package ru.axas.contacts.di
 
 import android.content.Context
-import ru.axas.spechrecognizer.store.di.ProvideFile
+import ru.axas.contacts.store.di.ProvideFile
 import java.io.File
 
 class ProvideFileImpl(private val context: Context): ProvideFile {

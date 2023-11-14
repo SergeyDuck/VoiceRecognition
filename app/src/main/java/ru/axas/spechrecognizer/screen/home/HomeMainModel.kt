@@ -1,27 +1,27 @@
-package ru.axas.spechrecognizer.screen.home
+package ru.axas.contacts.screen.home
 
 import android.content.Context
 import cafe.adriel.voyager.core.model.coroutineScope
-import ru.axas.spechrecognizer.common.models.util.addContact
-import ru.axas.spechrecognizer.common.models.util.deleteAllContacts
-import ru.axas.spechrecognizer.common.models.util.getContacts
+import ru.axas.contacts.common.models.util.addContact
+import ru.axas.contacts.common.models.util.deleteAllContacts
+import ru.axas.contacts.common.models.util.getContacts
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import ru.axas.spechrecognizer.base.BaseModel
-import ru.axas.spechrecognizer.common.memory.gDLoaderStart
-import ru.axas.spechrecognizer.common.memory.gDLoaderStop
-import ru.axas.spechrecognizer.common.memory.gDMessage
-import ru.axas.spechrecognizer.common.models.local.LocalFileValue
-import ru.axas.spechrecognizer.common.models.logger.LogCustom
-import ru.axas.spechrecognizer.common.models.util.isNetworkAvailable
-import ru.axas.spechrecognizer.network.model.Contact
-import ru.axas.spechrecognizer.screen.setting.SettingScreen
-import ru.axas.spechrecognizer.store.FileStoreApp
-import ru.axas.spechrecognizer.usecase.VoiceUseCase
+import ru.axas.contacts.base.BaseModel
+import ru.axas.contacts.common.memory.gDLoaderStart
+import ru.axas.contacts.common.memory.gDLoaderStop
+import ru.axas.contacts.common.memory.gDMessage
+import ru.axas.contacts.common.models.local.LocalFileValue
+import ru.axas.contacts.common.models.logger.LogCustom
+import ru.axas.contacts.common.models.util.isNetworkAvailable
+import ru.axas.contacts.network.model.Contact
+import ru.axas.contacts.screen.setting.SettingScreen
+import ru.axas.contacts.store.FileStoreApp
+import ru.axas.contacts.usecase.VoiceUseCase
 
 class HomeMainModel(
     private val context: Context,

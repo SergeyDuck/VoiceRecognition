@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.base.common_composable
+package ru.axas.contacts.base.common_composable
 
 import androidx.annotation.RawRes
 import androidx.compose.animation.core.MutableTransitionState
@@ -24,11 +24,11 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import ru.axas.spechrecognizer.base.extension.clickableRipple
-import ru.axas.spechrecognizer.base.res.DimApp
-import ru.axas.spechrecognizer.base.theme.ThemeApp
-import ru.axas.spechrecognizer.common.base.util.rememberImageRaw
-import ru.axas.spechrecognizer.common.base.util.rememberState
+import ru.axas.contacts.base.extension.clickableRipple
+import ru.axas.contacts.base.res.DimApp
+import ru.axas.contacts.base.theme.ThemeApp
+import ru.axas.contacts.common.base.util.rememberImageRaw
+import ru.axas.contacts.common.base.util.rememberState
 
 @Composable
 fun IconApp(

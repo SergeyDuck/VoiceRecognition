@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.base.util.picker
+package ru.axas.contacts.base.util.picker
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -24,9 +24,9 @@ import kotlinx.datetime.TimeZone
 import kotlinx.datetime.UtcOffset
 import kotlinx.datetime.toInstant
 import kotlinx.datetime.toLocalDateTime
-import ru.axas.spechrecognizer.base.theme.ThemeApp
-import ru.axas.spechrecognizer.common.base.util.rememberState
-import ru.axas.spechrecognizer.common.models.logger.LogCustom
+import ru.axas.contacts.base.theme.ThemeApp
+import ru.axas.contacts.common.base.util.rememberState
+import ru.axas.contacts.common.models.logger.LogCustom
 import java.time.YearMonth
 import java.util.Locale
 import java.time.format.TextStyle as TextStyleF

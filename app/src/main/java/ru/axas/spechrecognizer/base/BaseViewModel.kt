@@ -1,10 +1,10 @@
-package ru.axas.spechrecognizer.base
+package ru.axas.contacts.base
 
 import android.app.Activity
 import android.widget.Toast
 import cafe.adriel.voyager.core.model.ScreenModel
 import cafe.adriel.voyager.navigator.Navigator
-import ru.axas.spechrecognizer.common.models.logger.LogCustom.logE
+import ru.axas.contacts.common.models.logger.LogCustom.logE
 
 
 abstract class BaseModel : ScreenModel {

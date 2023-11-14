@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.screen.setting
+package ru.axas.contacts.screen.setting
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -17,16 +17,16 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.core.screen.ScreenKey
-import ru.axas.spechrecognizer.base.common_composable.BoxFillWeight
-import ru.axas.spechrecognizer.base.common_composable.BoxSpacer
-import ru.axas.spechrecognizer.base.common_composable.IconButtonApp
-import ru.axas.spechrecognizer.base.common_composable.TextFieldApp
-import ru.axas.spechrecognizer.base.res.DimApp
-import ru.axas.spechrecognizer.base.theme.ThemeApp
-import ru.axas.spechrecognizer.common.R
-import ru.axas.spechrecognizer.common.base.util.getQualifiedName
-import ru.axas.spechrecognizer.common.base.util.rememberModel
-import ru.axas.spechrecognizer.common.base.util.rememberState
+import ru.axas.contacts.base.common_composable.BoxFillWeight
+import ru.axas.contacts.base.common_composable.BoxSpacer
+import ru.axas.contacts.base.common_composable.IconButtonApp
+import ru.axas.contacts.base.common_composable.TextFieldApp
+import ru.axas.contacts.base.res.DimApp
+import ru.axas.contacts.base.theme.ThemeApp
+import ru.axas.contacts.common.R
+import ru.axas.contacts.common.base.util.getQualifiedName
+import ru.axas.contacts.common.base.util.rememberModel
+import ru.axas.contacts.common.base.util.rememberState
 
 class SettingScreen : Screen {
 

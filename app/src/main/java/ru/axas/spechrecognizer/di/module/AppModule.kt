@@ -1,11 +1,11 @@
-package ru.axas.spechrecognizer.di.module
+package ru.axas.contacts.di.module
 
-import ru.axas.spechrecognizer.network.Client
-import ru.axas.spechrecognizer.network.api.ApiAlbums
-import ru.axas.spechrecognizer.screen.home.HomeMainModel
-import ru.axas.spechrecognizer.screen.setting.SettingModel
-import ru.axas.spechrecognizer.screen.splash.SplashScreenModel
-import ru.axas.spechrecognizer.usecase.VoiceUseCase
+import ru.axas.contacts.network.Client
+import ru.axas.contacts.network.api.ApiAlbums
+import ru.axas.contacts.screen.home.HomeMainModel
+import ru.axas.contacts.screen.setting.SettingModel
+import ru.axas.contacts.screen.splash.SplashScreenModel
+import ru.axas.contacts.usecase.VoiceUseCase
 import org.koin.dsl.module
 
 

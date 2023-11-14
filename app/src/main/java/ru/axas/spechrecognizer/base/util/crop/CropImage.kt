@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.base.util.crop
+package ru.axas.contacts.base.util.crop
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -24,13 +24,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
-import ru.axas.spechrecognizer.common.base.util.crop.SampledImageBitmap
-import ru.axas.spechrecognizer.common.base.util.crop.loadImageBitmap
-import ru.axas.spechrecognizer.common.base.util.crop.loadSampledImageBitmap
+import ru.axas.contacts.common.base.util.crop.SampledImageBitmap
+import ru.axas.contacts.common.base.util.crop.loadImageBitmap
+import ru.axas.contacts.common.base.util.crop.loadSampledImageBitmap
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import ru.axas.spechrecognizer.common.base.util.rememberState
-import ru.axas.spechrecognizer.common.models.logger.LogCustom.logE
+import ru.axas.contacts.common.base.util.rememberState
+import ru.axas.contacts.common.models.logger.LogCustom.logE
 import java.lang.Float.max
 import java.lang.Float.min
 import kotlin.math.roundToInt

@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.main
+package ru.axas.contacts.main
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -17,13 +17,13 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import cafe.adriel.voyager.navigator.Navigator
-import ru.axas.spechrecognizer.base.common_composable.LoadBarWithTimerClose
+import ru.axas.contacts.base.common_composable.LoadBarWithTimerClose
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import ru.axas.spechrecognizer.base.extension.clickableNoRipple
-import ru.axas.spechrecognizer.base.theme.LocalGlobalData
-import ru.axas.spechrecognizer.base.theme.ThemeApp
-import ru.axas.spechrecognizer.screen.splash.SplashScreen
+import ru.axas.contacts.base.extension.clickableNoRipple
+import ru.axas.contacts.base.theme.LocalGlobalData
+import ru.axas.contacts.base.theme.ThemeApp
+import ru.axas.contacts.screen.splash.SplashScreen
 
 @Composable
 fun MainNavigation() {

@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.network.model
+package ru.axas.contacts.network.model
 
 class SendingData(val message: String?) {
     companion object {

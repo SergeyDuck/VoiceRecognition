@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.base.util
+package ru.axas.contacts.base.util
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember

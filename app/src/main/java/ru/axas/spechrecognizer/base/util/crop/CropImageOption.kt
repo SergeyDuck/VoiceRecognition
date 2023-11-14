@@ -1,11 +1,11 @@
-package ru.axas.spechrecognizer.base.util.crop
+package ru.axas.contacts.base.util.crop
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import ru.axas.spechrecognizer.base.theme.ThemeApp
-import ru.axas.spechrecognizer.common.base.util.rememberState
+import ru.axas.contacts.base.theme.ThemeApp
+import ru.axas.contacts.common.base.util.rememberState
 
 data class CropImageOption(
     val frameColor: Color = Color.White,

@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.base.theme
+package ru.axas.contacts.base.theme
 
 import androidx.compose.foundation.shape.CornerBasedShape
 import androidx.compose.runtime.Composable
@@ -6,9 +6,9 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
-import ru.axas.spechrecognizer.base.res.LightPaletteApp
-import ru.axas.spechrecognizer.base.res.ShapesApp
-import ru.axas.spechrecognizer.base.res.TypographyApp
+import ru.axas.contacts.base.res.LightPaletteApp
+import ru.axas.contacts.base.res.ShapesApp
+import ru.axas.contacts.base.res.TypographyApp
 
 
 @Immutable

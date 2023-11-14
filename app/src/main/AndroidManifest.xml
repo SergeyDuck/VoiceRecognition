@@ -9,7 +9,7 @@
 
 
     <application
-        android:name="ru.axas.spechrecognizer.main.App"
+        android:name="ru.axas.contacts.main.App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -20,7 +20,7 @@
         android:theme="@style/Theme.SpechRecognizer"
         tools:targetApi="31">
         <activity
-            android:name="ru.axas.spechrecognizer.main.MainActivity"
+            android:name="ru.axas.contacts.main.MainActivity"
             android:exported="true"
 
             android:theme="@style/Theme.SpechRecognizer">

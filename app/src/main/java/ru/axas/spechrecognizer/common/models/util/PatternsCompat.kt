@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package ru.axas.spechrecognizer.common.models.util
+package ru.axas.contacts.common.models.util
 
 import androidx.annotation.RestrictTo
 import java.util.regex.Pattern

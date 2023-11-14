@@ -23,7 +23,7 @@ android {
     val keyAliasName = "keyAlias"
     val keyPasswordName = "keyPassword"
 
-    namespace = "ru.axas.spechrecognizer.common"
+    namespace = "ru.axas.contacts.common"
     compileSdk = libs.versions.targetSdk.get().toInt()
 
     if (props.containsKey(storeFileDirName)) {

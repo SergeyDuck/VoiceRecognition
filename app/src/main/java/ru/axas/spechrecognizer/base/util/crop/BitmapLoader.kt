@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.common.base.util.crop
+package ru.axas.contacts.common.base.util.crop
 
 import android.content.Context
 import android.graphics.BitmapFactory

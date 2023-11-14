@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.base.theme
+package ru.axas.contacts.base.theme
 
 import android.app.Activity
 import androidx.compose.runtime.Composable
@@ -13,15 +13,15 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.Observer
-import ru.axas.spechrecognizer.base.res.LightPaletteApp
-import ru.axas.spechrecognizer.base.res.ShapesApp
-import ru.axas.spechrecognizer.base.res.TypographyApp
-import ru.axas.spechrecognizer.common.base.util.rememberImeHeight
-import ru.axas.spechrecognizer.common.base.util.rememberNavigationBarHeight
-import ru.axas.spechrecognizer.common.base.util.rememberState
-import ru.axas.spechrecognizer.common.base.util.rememberStatusBarHeight
-import ru.axas.spechrecognizer.common.memory.GlobalDada
-import ru.axas.spechrecognizer.common.models.local.DataSingleLive
+import ru.axas.contacts.base.res.LightPaletteApp
+import ru.axas.contacts.base.res.ShapesApp
+import ru.axas.contacts.base.res.TypographyApp
+import ru.axas.contacts.common.base.util.rememberImeHeight
+import ru.axas.contacts.common.base.util.rememberNavigationBarHeight
+import ru.axas.contacts.common.base.util.rememberState
+import ru.axas.contacts.common.base.util.rememberStatusBarHeight
+import ru.axas.contacts.common.memory.GlobalDada
+import ru.axas.contacts.common.models.local.DataSingleLive
 
 @Composable
 fun AxasTheme(

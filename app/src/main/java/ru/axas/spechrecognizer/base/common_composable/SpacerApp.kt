@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.base.common_composable
+package ru.axas.contacts.base.common_composable
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -12,8 +12,8 @@ import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
-import ru.axas.spechrecognizer.base.res.DimApp
-import ru.axas.spechrecognizer.base.theme.ThemeApp
+import ru.axas.contacts.base.res.DimApp
+import ru.axas.contacts.base.theme.ThemeApp
 
 @Composable
 @NonRestartableComposable

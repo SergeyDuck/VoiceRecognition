@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.common.models.util
+package ru.axas.contacts.common.models.util
 
 import kotlinx.datetime.Clock
 import java.text.SimpleDateFormat

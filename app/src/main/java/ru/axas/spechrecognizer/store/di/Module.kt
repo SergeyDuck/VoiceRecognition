@@ -1,7 +1,7 @@
-package ru.axas.spechrecognizer.store.di
+package ru.axas.contacts.store.di
 
 
-import ru.axas.spechrecognizer.store.FileStoreApp
+import ru.axas.contacts.store.FileStoreApp
 import org.koin.dsl.module
 
 

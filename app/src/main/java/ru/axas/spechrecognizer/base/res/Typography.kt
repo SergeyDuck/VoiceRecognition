@@ -1,11 +1,11 @@
-package ru.axas.spechrecognizer.base.res
+package ru.axas.contacts.base.res
 
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
-import ru.axas.spechrecognizer.common.R
-import ru.axas.spechrecognizer.base.theme.TypographySchemeApp
+import ru.axas.contacts.common.R
+import ru.axas.contacts.base.theme.TypographySchemeApp
 
 
 val TypographyApp = TypographySchemeApp(

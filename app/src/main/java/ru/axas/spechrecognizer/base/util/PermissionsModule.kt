@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.base.util
+package ru.axas.contacts.base.util
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -29,10 +29,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.net.toUri
-import ru.axas.spechrecognizer.common.BuildConfig
-import ru.axas.spechrecognizer.common.base.util.getFileRealPatch
-import ru.axas.spechrecognizer.common.models.logger.LogCustom
-import ru.axas.spechrecognizer.common.models.logger.LogCustom.logD
+import ru.axas.contacts.common.BuildConfig
+import ru.axas.contacts.common.base.util.getFileRealPatch
+import ru.axas.contacts.common.models.logger.LogCustom
+import ru.axas.contacts.common.models.logger.LogCustom.logD
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat

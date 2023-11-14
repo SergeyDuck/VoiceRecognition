@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.base.extension
+package ru.axas.contacts.base.extension
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind

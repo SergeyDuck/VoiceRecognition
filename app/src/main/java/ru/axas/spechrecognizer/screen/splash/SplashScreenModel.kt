@@ -1,12 +1,12 @@
-package ru.axas.spechrecognizer.screen.splash
+package ru.axas.contacts.screen.splash
 
 import android.content.Context
 import cafe.adriel.voyager.core.model.coroutineScope
-import ru.axas.spechrecognizer.base.BaseModel
-import ru.axas.spechrecognizer.common.memory.gDLoaderStart
-import ru.axas.spechrecognizer.common.memory.gDLoaderStop
-import ru.axas.spechrecognizer.common.models.logger.LogCustom.logE
-import ru.axas.spechrecognizer.screen.home.HomeMainScreen
+import ru.axas.contacts.base.BaseModel
+import ru.axas.contacts.common.memory.gDLoaderStart
+import ru.axas.contacts.common.memory.gDLoaderStop
+import ru.axas.contacts.common.models.logger.LogCustom.logE
+import ru.axas.contacts.screen.home.HomeMainScreen
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

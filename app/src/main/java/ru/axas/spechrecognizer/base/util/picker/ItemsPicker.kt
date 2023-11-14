@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.base.util.picker
+package ru.axas.contacts.base.util.picker
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
@@ -16,8 +16,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import ru.axas.spechrecognizer.common.base.util.rememberDerivedState
-import ru.axas.spechrecognizer.common.base.util.rememberState
+import ru.axas.contacts.common.base.util.rememberDerivedState
+import ru.axas.contacts.common.base.util.rememberState
 import kotlin.math.abs
 import kotlin.math.ceil
 

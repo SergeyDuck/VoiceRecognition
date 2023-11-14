@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.base.common_composable
+package ru.axas.contacts.base.common_composable
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.BoxScope
@@ -7,9 +7,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import ru.axas.spechrecognizer.base.theme.ThemeApp
-import ru.axas.spechrecognizer.base.res.DimApp
-import ru.axas.spechrecognizer.common.models.res.TextApp
+import ru.axas.contacts.base.theme.ThemeApp
+import ru.axas.contacts.base.res.DimApp
+import ru.axas.contacts.common.models.res.TextApp
 
 
 @Composable

@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.common.models.res
+package ru.axas.contacts.common.models.res
 
 object TextApp {
 

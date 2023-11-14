@@ -1,15 +1,15 @@
-package ru.axas.spechrecognizer.main
+package ru.axas.contacts.main
 
 import android.app.Application
 import coil.ImageLoader
 import coil.ImageLoaderFactory
 import coil.disk.DiskCache
 import coil.memory.MemoryCache
-import ru.axas.spechrecognizer.common.BuildConfig
-import ru.axas.spechrecognizer.di.module.setModels
-import ru.axas.spechrecognizer.common.models.logger.LogCustom
-import ru.axas.spechrecognizer.common.models.res.TextApp
-import ru.axas.spechrecognizer.di.initKoin
+import ru.axas.contacts.common.BuildConfig
+import ru.axas.contacts.di.module.setModels
+import ru.axas.contacts.common.models.logger.LogCustom
+import ru.axas.contacts.common.models.res.TextApp
+import ru.axas.contacts.di.initKoin
 
 class App : Application(), ImageLoaderFactory {
 

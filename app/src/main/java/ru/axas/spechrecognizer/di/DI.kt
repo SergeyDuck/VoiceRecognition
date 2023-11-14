@@ -14,11 +14,11 @@
  *  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package ru.axas.spechrecognizer.di
+package ru.axas.contacts.di
 
 import android.content.Context
-import ru.axas.spechrecognizer.di.module.setModels
-import ru.axas.spechrecognizer.store.di.providersModuleDataStore
+import ru.axas.contacts.di.module.setModels
+import ru.axas.contacts.store.di.providersModuleDataStore
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin

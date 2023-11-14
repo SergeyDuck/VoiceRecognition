@@ -1,10 +1,10 @@
-package ru.axas.spechrecognizer.store
+package ru.axas.contacts.store
 
 import androidx.datastore.core.DataStoreFactory
-import ru.axas.spechrecognizer.common.models.local.LocalFileValue
+import ru.axas.contacts.common.models.local.LocalFileValue
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
-import ru.axas.spechrecognizer.store.di.ProvideFile
+import ru.axas.contacts.store.di.ProvideFile
 
 class FileStoreApp(private val provideFile: ProvideFile) {
 

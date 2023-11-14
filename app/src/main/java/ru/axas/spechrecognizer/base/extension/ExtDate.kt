@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.base.extension
+package ru.axas.contacts.base.extension
 
 import android.annotation.SuppressLint
 import java.text.SimpleDateFormat

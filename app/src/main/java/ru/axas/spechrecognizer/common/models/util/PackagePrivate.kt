@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.common.models.util
+package ru.axas.contacts.common.models.util
 
 /**
  * @RequiresOptIn(message = "Only to be used in MyPackage")

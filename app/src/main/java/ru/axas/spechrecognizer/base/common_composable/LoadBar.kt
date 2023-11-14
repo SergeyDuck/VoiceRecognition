@@ -1,4 +1,4 @@
-package ru.axas.spechrecognizer.base.common_composable
+package ru.axas.contacts.base.common_composable
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -15,8 +15,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.window.Dialog
-import ru.axas.spechrecognizer.base.theme.ThemeApp
-import ru.axas.spechrecognizer.base.res.DimApp
+import ru.axas.contacts.base.theme.ThemeApp
+import ru.axas.contacts.base.res.DimApp
 
 @Composable
 fun LoadBarWithTimerClose(
